@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashleigh Jemine B. Sanchez | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #111111;
+            --secondary-text: #555555;
+            --accent-color: #000000;
+            --border-color: #e0e0e0;
+            --section-padding: 80px 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Sections General */
+        section {
+            padding: var(--section-padding);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding-top: 100px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .hero-img {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--border-color);
+        }
+
+        /* About Section */
+        .about-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 40%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .about-text {
+            width: 60%;
+        }
+
+        /* Education & Experience Timeline */
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .timeline-sub {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .skills-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        /* Projects & Certificates Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fafafa;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info a {
+            display: block;
+            color: var(--text-color);
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--accent-color);
+        }
+
+        .btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav { padding: 20px 5%; }
+            .nav-links { display: none; } /* Pwede butangan og burger menu sa umaabot */
+            .hero { flex-direction: column-reverse; text-align: center; justify-content: center; height: auto; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .about-container { flex-direction: column; }
+            .about-img, .about-text { width: 100%; }
+            .contact-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">AS.</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <p>Hello there!</p>
+            <h1>I'm Ashleigh Jemine B. Sanchez</h1>
+            <p>Information Systems student passionate about UI/UX design and system development.</p>
+            <a href="#contact" class="btn">Let's Connect</a>
+        </div>
+        <!-- Ibalhin lang diri ang path sa imong profile picture -->
+        <img src="jmn.png" alt="Ashleigh Jemine B. Sanchez" class="hero-img">
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <!-- Ibalhin lang diri ang path sa imong formal/cultural picture -->
+            <img src="aboutme.png" alt="Ashleigh" class="about-img">
+            <div class="about-text">
+                <p>Hello! I am Ashleigh, a Bachelor of Science in Information Systems (BSIS) student with a strong interest in technology, system analysis, and digital design. I am passionate about creating innovative solutions that improve efficiency and solve real-world problems.</p>
+                <br>
+                <p>Through my academic journey, I have developed skills in database management, documentation, and information systems concepts. I enjoy learning new technologies, taking on challenges, and continuously improving my knowledge and abilities. My goal is to grow as an Information Systems professional and contribute to the development of effective and user-friendly technology solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="timeline-item">
+            <div class="timeline-date">2022 - 2026</div>
+            <h3>Bachelor of Science in Information Systems</h3>
+            <div class="timeline-sub">Davao del Norte State College</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2020 - 2022</div>
+            <h3>General Academic Strand</h3>
+            <div class="timeline-sub">Maryknoll College of Panabo Inc.</div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <div class="timeline-item">
+            <div class="timeline-date">2026</div>
+            <h3>IS Intern</h3>
+            <div class="timeline-sub">Administration & Finance Office - DNSC Carmen Campus</div>
+            <p>Assisted in various administrative and finance-related tasks, including organizing and managing office documents, preparing reports, encoding data, and maintaining records.</p>
+            <ul class="skills-list">
+                <li>Data Entry and Documentation</li>
+                <li>Office Administration</li>
+                <li>Communication Skills</li>
+                <li>Time Management</li>
+                <li>Teamwork and Professionalism</li>
+                <li>Attention to Detail</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="system.png" alt="DMIS for J4 Dental Clinic" class="card-img">
+                <div class="card-content">
+                    <h3>DMIS for J4 Dental Clinic</h3>
+                    <p style="margin-bottom: 20px; color: var(--secondary-text);">A Dental Management Information System designed to streamline appointments, records, and billing operations for modern clinic management.</p>
+                    
+                    <a href="https://dental-clinic-webapp-rust.vercel.app/" target="_blank" class="btn" style="display: inline-block; text-decoration: none; padding: 8px 16px; font-size: 0.9rem;">View System</a>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+   <!-- Certificates Section -->
+    <section id="certificates">
+        <h2>Certificates</h2>
+        <div class="grid">
+            <div class="card">
+                <!-- I-replace ang 'python-cert.png' sa filename sa imong Cisco Python Certificate -->
+                <img src="cisco.png" alt="Python Essentials 1 Certificate" class="card-img" style="width: 100%; height: 200px; object-fit: cover; background-color: #eee;">
+                <div class="card-content">
+                    <h3>Python Essentials 1</h3>
+                    <div class="timeline-sub" style="margin-bottom: 5px;">Cisco Networking Academy & OpenEDG Python Institute</div>
+                    <div class="timeline-date">Nov 13, 2025</div>
+                    <p>Skills: Simple programming in Python 3, algorithm analysis, syntax, and Python Standard Library.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- I-replace ang 'exhibit-cert.png' sa filename sa imong Capstone Participation Certificate -->
+                <img src="exhibit.png" alt="Capstone Project Exhibit Certificate" class="card-img" style="width: 100%; height: 200px; object-fit: cover; background-color: #eee;">
+                <div class="card-content">
+                    <h3>Capstone Project Exhibit 2026</h3>
+                    <div class="timeline-sub" style="margin-bottom: 5px;">Davao del Norte State College</div>
+                    <div class="timeline-date">June 1, 2026</div>
+                    <p>Participation and presentation of the Capstone project: "Dental Management Information System for J4 Clinic".</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- I-replace ang 'deployment-cert.png' sa filename sa imong Capstone Completion Certificate -->
+                <img src="j4.png" alt="Capstone Deployment Certificate" class="card-img" style="width: 100%; height: 200px; object-fit: cover; background-color: #eee;">
+                <div class="card-content">
+                    <h3>Capstone Deployment Certificate</h3>
+                    <div class="timeline-sub" style="margin-bottom: 5px;">Davao del Norte State College</div>
+                    <div class="timeline-date">March 9 - April 17, 2026</div>
+                    <p>Successful presentation, implementation, and deployment of the "Dental Management Information System for J4 Clinic".</p>
+                </div>
+            </div>
+        
+
+   <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-container" style="display: flex; justify-content: space-between; gap: 50px; align-items: flex-start;">
+            <div class="contact-info" style="flex: 1;">
+                <h3>Let's Connect</h3>
+                <br>
+                <p>Email:</p>
+                <a href="mailto:sanchez.ashleighjemine@dnsc.edu.ph" style="color: var(--text-color); text-decoration: underline; display: block; margin-bottom: 15px; font-size: 1.1rem;">sanchez.ashleighjemine@dnsc.edu.ph</a>
+                <br>
+                <p>Facebook:</p>
+                <a href="https://facebook.com/ashleighsnchz" target="_blank" style="color: var(--text-color); text-decoration: underline; display: block; margin-bottom: 15px; font-size: 1.1rem;">Ashleigh Sanchez</a> 
+            </div>
+            <form class="contact-form" style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                <h3>Send a Message</h3>
+                <br>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
